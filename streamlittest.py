@@ -37,10 +37,10 @@ for _, row in sharktotal4.iterrows():
         },
         'properties': {
             'time': row['Year'].date().__str__(),
-            'style': {'color' : 'red'},
+            'style': {'color' : row['doodkleur']},
             'icon': 'circle',
             'iconstyle':{
-                'fillColor': 'red',
+                'fillColor': row['doodkleur'],
                 'fillOpacity': 1,
                 'stroke': 'true',
                 'radius': 1
