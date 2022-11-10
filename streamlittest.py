@@ -98,7 +98,7 @@ for _, row in sharktotal4.iterrows():
     }
     features.append(feature)
 
-timelapsemap = folium.Map(control_scale=True, zoom_start=1,location=[20, 10],width=520,height=400)
+timelapsemap = folium.Map(zoom_control=False,scrollWheelZoom=False,dragging=False,control_scale=True, zoom_start=1,location=[20, 10],width=520,height=400)
 
 TimestampedGeoJson(
     {'type': 'FeatureCollection',
