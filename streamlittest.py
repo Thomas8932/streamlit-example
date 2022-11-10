@@ -121,9 +121,12 @@ TimestampedGeoJson(
 tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
 
 with tab1:
-  st.header("A cat")  
+  st.header("Choropleth")  
 
   st_date = st_folium(mapcp,width=520,height=400)
+  
+  st.header("Tijdlijn kaart")  
+  
   st_data = st_folium(timelapsemap,width=520,height=400)
 
     
