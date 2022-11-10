@@ -146,7 +146,7 @@ with tab2:
     
     
     
-      newnames = {'Y':'Dodelijk', 'N': 'Niet dodelijk'}
+   newnames = {'Y':'Dodelijk', 'N': 'Niet dodelijk'}
    fig1 = px.histogram(df, x = df['Activity_cat'], color = df['Fatal (Y/N)'],
                      labels={
                        "Activity_cat": "Activiteit"
