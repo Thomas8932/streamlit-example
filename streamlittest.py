@@ -113,22 +113,21 @@ TimestampedGeoJson(
     , time_slider_drag_update=True
 ).add_to(timelapsemap)
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+#tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
 
-with tab1:
-   st.header("A cat")
+#with tab1:
+#   st.header("A cat")
 
-with tab2:
-   st_date = st_folium(mapcp,width=520,height=400)
+#with tab2:
+#   st_date = st_folium(mapcp,width=520,height=400)
 
-   st.header("A cdasfat")
+#   st.header("A cdasfat")
   
   
-with tab3:
-   st_data = st_folium(timelapsemap,width=520,height=400)
+#with tab3:
+#   st_data = st_folium(timelapsemap,width=520,height=400)
 
-
-
-
+st_date = st_folium(mapcp,width=520,height=400)
+st_data = st_folium(timelapsemap,width=520,height=400)
 
 
