@@ -30,6 +30,8 @@ from folium.plugins import TimestampedGeoJson
 
 countriesgeometry = gpd.read_file('countriesgeometry.geojson')
 landhoeveelheden = pd.read_csv('landhoeveelheden.csv')
+countriesgeometry['ADMIN'] = countriesgeometry['ADMIN'].str.lower()
+
 
 mapcp = folium.Map(zoom_control=False,
                scrollWheelZoom=False,
