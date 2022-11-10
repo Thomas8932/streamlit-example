@@ -13,6 +13,9 @@ import numpy as np
 import streamlit as st
 from streamlit_folium import st_folium
 
+import plotly.express as px
+import plotly.graph_objects as go
+
 from folium import plugins
 
 from folium.plugins import TimestampedGeoJson
