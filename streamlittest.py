@@ -20,7 +20,11 @@ from folium.plugins import TimestampedGeoJson
 
 
 
-timelapsemap = folium.Map(location=coords_belgium, control_scale=True, zoom_start=1.5)
+timelapsemap = folium.Map(location=[30, 10], control_scale=True, zoom_start=1.5)
+
+
+timelapsemap 
+
 
 st_data = st_folium(timelapsemap,width=725)
 
