@@ -120,7 +120,7 @@ with tab1:
    st.header("A cat")
 
 with tab2:
-   st_date = st_folium(mapcp,width=725)
+   st_date = st_folium(mapcp,width=520,height=400)
 
 with tab3:
    st_data = st_folium(timelapsemap,width=520,height=400)
