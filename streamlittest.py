@@ -112,7 +112,6 @@ with tab2:
    st.header("A dog")
 
 with tab3:
-   st.header("An owl")
    st_data = st_folium(timelapsemap,width=520,height=400)
 
 
