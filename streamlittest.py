@@ -121,6 +121,9 @@ with tab1:
 with tab2:
 #   st_date = st_folium(mapcp,width=520,height=400)
 
+   st.header("A cdasfat")
+  
+  
 with tab3:
    st_data = st_folium(timelapsemap,width=520,height=400)
 
