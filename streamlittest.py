@@ -152,12 +152,12 @@ with tab2:
                        "Activity_cat": "Activiteit"
                   },
                   title='Aantal aanvallen per activiteit').update_xaxes(categoryorder="total descending")
-    fig1.update_yaxes(title='Aantal aanvallen')
-    fig1.update_layout(legend_title="Uitkomst aanval")
-    fig1.for_each_trace(lambda t: t.update(name = newnames[t.name],
+   fig1.update_yaxes(title='Aantal aanvallen')
+   fig1.update_layout(legend_title="Uitkomst aanval")
+   fig1.for_each_trace(lambda t: t.update(name = newnames[t.name],
                                         legendgroup = newnames[t.name],
                                         hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
-    st.plotly_chart(fig1)
+   st.plotly_chart(fig1)
     
     
     
