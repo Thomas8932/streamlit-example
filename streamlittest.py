@@ -40,7 +40,7 @@ for _, row in sharktotal4.iterrows():
             'style': {'color' : row['doodkleur']},
             'icon': 'circle',
             'iconstyle':{
-                'fillColor': row['doodkleur'],
+                'fillColor': 'black'],
                 'fillOpacity': 1,
                 'stroke': 'true',
                 'radius': 1
