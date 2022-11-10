@@ -89,7 +89,7 @@ TimestampedGeoJson(
     , auto_play=False
     , loop=False
     , max_speed=1
-    , loop_button=True
+    , loop_button=False
     , date_options='YYYY'
     , time_slider_drag_update=True
 ).add_to(timelapsemap)
