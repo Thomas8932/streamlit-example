@@ -94,7 +94,7 @@ TimestampedGeoJson(
 # make_map(sharkjason)
 
 
-st_data = st_folium(timelapsemap,width=520,height=200)
+st_data = st_folium(timelapsemap,width=520,height=400)
 
 
 
