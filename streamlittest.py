@@ -28,34 +28,6 @@ from folium.plugins import TimestampedGeoJson
 
 
 
-countriesgeometry = gpd.read_file('countriesgeometry.geojson')
-landhoeveelheden = pd.read_csv('landhoeveelheden.csv')
-countriesgeometry['ADMIN'] = countriesgeometry['ADMIN'].str.lower()
-
-
-mapcp = folium.Map(zoom_control=False,
-               scrollWheelZoom=False,
-               dragging=False,
-              zoom_start=1,
-               location=[20, 10],
-               width=620,
-               height=500,
-               tiles='cartodbpositron')
-
-folium.Choropleth(
-    geo_data=countriesgeometry,
-    name="choropleth",
-    data=landhoeveelheden,
-    columns=["Country",'hoeveelheid2'],
-    fill_color="YlGn",
-    fill_opacity=1,
-    line_opacity=.9,
-    nan_fill_color="purple",
-    key_on ='feature.properties.ADMIN',
-    
-    legend_name="Haai aanvallen (log schaal)",
-).add_to(mapcp)
-
 
 
 
@@ -120,7 +92,7 @@ with tab1:
    st.header("A cat")
 
 with tab2:
-   st_date = st_folium(mapcp,width=520,height=400)
+#   st_date = st_folium(mapcp,width=520,height=400)
 
 with tab3:
    st_data = st_folium(timelapsemap,width=520,height=400)
