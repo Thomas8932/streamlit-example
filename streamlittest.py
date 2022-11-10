@@ -119,7 +119,7 @@ with tab1:
    st.header("A cat")
 
 with tab2:
-#   st_date = st_folium(mapcp,width=520,height=400)
+   st_date = st_folium(mapcp,width=520,height=400)
 
    st.header("A cdasfat")
   
