@@ -90,7 +90,7 @@ timelapsemap
 # make_map(sharkjason)
 
 
-st_data = st_folium(timelapsemap,width=725)
+st_data = st_folium(timelapsemap)
 
 
 
