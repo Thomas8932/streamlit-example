@@ -63,7 +63,15 @@ for _, row in sharktotal1.iterrows():
 
 
 coords_belgium=[30, 10]
-timelapsemap = folium.Map(location=coords_belgium, control_scale=True, zoom_start=1.2)
+timelapsemap = folium.Map(location=coords_belgium, control_scale=True, zoom_start=1,
+               location=[20, 10],
+               width=520,
+               height=400)
+
+
+
+
+
 
 
 TimestampedGeoJson(
