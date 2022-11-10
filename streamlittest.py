@@ -131,8 +131,8 @@ with tab2:
    st.header("A cdasfat")
   
   
-#with tab3:
-#   st_data = st_folium(timelapsemap,width=520,height=400)
+with tab3:
+   st.header("A cdasfasdfat")
 
 
 
