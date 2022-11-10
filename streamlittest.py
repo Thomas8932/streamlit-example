@@ -24,11 +24,11 @@ from folium.plugins import TimestampedGeoJson
 
 
 
+sharktotal4 = pd.read_csv('timelapsedataframe.csv')
+sharktotal4['Year'] = pd.to_datetime(arg=sharktotal4['Year'])
 
-
-sharktotal1 = pd.read_csv('timelapsedataframe.csv')
 features = []
-for _, row in sharktotal1.iterrows():
+for _, row in sharktotal4.iterrows():
     feature = {
         'type': 'Feature',
         'geometry': {
@@ -74,12 +74,6 @@ with tab2:
 
 with tab3:
    st_data = st_folium(timelapsemap,width=520,height=400)
-
-
-
-
-
-
 
 
 
