@@ -388,7 +388,7 @@ with tab4:
   st.code(code2, language="python")
   st.header('Coordinaten vinden')
   st.code(code1, language="python")
-  st.header('Gender')
+  st.header('Activiteit')
   st.code(code4, language="python")
   
   
