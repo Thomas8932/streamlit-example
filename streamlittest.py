@@ -354,7 +354,7 @@ with tab3:
   fig4.update_layout(legend_title="Uitkomst aanval")
   
   fig4.for_each_trace(lambda t: t.update(name = newnames[t.name],legendgroup = newnames[t.name],hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
-  fig4.update_traces(symbol="diamond")
+#  fig4.update_traces(symbol="diamond")
   fig4.update_xaxes(rangeslider_visible=True)
   st.plotly_chart(fig4)    
   
