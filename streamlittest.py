@@ -201,8 +201,9 @@ with tab3:
   
   ###############################################################################################################################################
   
-  fig2.show()
+  st.plotly_chart(fig2)
   
+  ###############################################################################################################################################
   
   display_line0 = display_data[['Year','Attack']] 
   display_line = display_line0.groupby('Year')['Attack'].sum()
@@ -219,8 +220,7 @@ with tab3:
                   },
                   title='Aantal aanvallen per jaar')
   fig3.update_xaxes(rangeslider_visible=True)
-  fig3.show()
-  
+  st.plotly_chart(fig3)
   
   
   
