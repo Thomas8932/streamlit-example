@@ -117,7 +117,7 @@ BAHAMAS = df[df['Country'] == 'BAHAMAS']
 
 ###############
 
-code = '''
+code1 = '''
 x = 0
 coordsLAT = []
 coordsLONG = []
@@ -194,6 +194,50 @@ for a,b in aanvalplek.iterrows():
                     coordsLONG.append('error')
                     methode.append('error')'''
 
+code2 = '''
+api = KaggleApi()
+api.authenticate()
+
+api.dataset_download_file('thedevastator/shark-attacks-the-risks-of-coastal-water-activit',
+                          file_name='GSAF5.xls.csv')
+
+import zipfile
+
+with zipfile.ZipFile('GSAF5.xls.csv.zip', 'r') as zipref:
+    zipref.extractall('./Datasets')'''
+
+code3 = '''
+df['Name']= df['Name'].dropna(how=any)
+poging = df.Name.str.split(" ",expand=True,)
+df['voornaam'] = poging[0]
+df = df.reset_index(drop=True)
+
+d = gender.Detector()
+geslacht= []
+
+for i in range(0, len(df)):
+    geslacht.append(d.get_gender(df['voornaam'][i]))
+    
+df['geslacht'] = geslacht
+
+male = pd.Series(np.array(["male","boy","2 males","male,","Mr.","mostly_male"]))
+female = pd.Series(np.array(["female","female,","Mrs.","Mrs","Miss","woman","mostly_female"]))
+
+
+for i in range(0,len(df['geslacht'])):
+    if male.str.contains(df['voornaam'][i],regex=False).any():
+        df['geslacht'][i] = 'male'
+    elif female.str.contains(df['voornaam'][i],regex=False).any():
+        df['geslacht'][i] = 'female'
+    elif df['geslacht'][i] == 'mostly_male':
+        df['geslacht'][i] = 'male'
+    elif df['geslacht'][i] == "mostly_female":
+        df['geslacht'][i] = 'female'
+    elif df['geslacht'][i] == "andy":
+        df['geslacht'][i] = 'unknown'
+    else:   
+        df['geslacht'][i] = df['geslacht'][i]
+'''
 
  
 
@@ -318,9 +362,14 @@ with tab3:
 ###############################################################################################################################################
   
 with tab4:
-  st.header('Coordinaten vinden')
-  st.code(code, language="python")
+  st.header('API')
   
+  
+  st.code(code2, language="python")
+  st.header('Coordinaten vinden')
+  st.code(code1, language="python")
+  st.header('Gender')
+  st.code(code3, language="python")
   
   
   
