@@ -20,19 +20,7 @@ from folium import plugins
 
 from folium.plugins import TimestampedGeoJson
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+################################################################################################################################################
 
 countriesgeometry = gpd.read_file('countriesgeometry.geojson')
 landhoeveelheden = pd.read_csv('landhoeveelheden.csv')
@@ -61,20 +49,7 @@ folium.Choropleth(
     legend_name="Haai aanvallen (log schaal)",
 ).add_to(mapcp)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+################################################################################################################################################
 
 sharktotal4 = pd.read_csv('timelapsedataframe.csv')
 sharktotal4['Year'] = pd.to_datetime(arg=sharktotal4['Year'])
@@ -116,11 +91,64 @@ TimestampedGeoJson(
     , time_slider_drag_update=True
 ).add_to(timelapsemap)
 
-
+################################################################################################################################################
 
 df = pd.read_csv('thijsdf.csv')
 
 
+
+
+
+
+################################################################################################################################################
+
+Alle_Landen= df
+USA = df[df['Country'] == 'USA']
+AUSTRALIA = df[df['Country'] == 'AUSTRALIA']
+SOUTH_AFRICA = df[df['Country'] == 'SOUTH AFRICA']
+NEW_ZEALAND = df[df['Country'] == 'NEW ZEALAND']
+PAPUA_NEW_GUINEA = df[df['Country'] == 'PAPUA NEW GUINEA']
+BRAZIL = df[df['Country'] == 'BRAZIL']
+BAHAMAS = df[df['Country'] == 'BAHAMAS']
+
+###############
+
+datasetlijst = ["Alle_Landen", "USA", "AUSTRALIA", "SOUTH_AFRICA", "NEW_ZEALAND", "PAPUA_NEW_GUINEA","BRAZIL","BAHAMAS"]
+
+if (dataframeselect == datasetlijst[0]) & (dataframeselect != ""):
+        display_data = df.copy()
+        country = 'All'
+elif (dataframeselect == datasetlijst[1]) & (dataframeselect != ""):
+        display_data = df_usa.copy()
+        country = 'USA'
+elif (dataframeselect == datasetlijst[2]) & (dataframeselect != ""):
+        display_data = df_aus.copy()
+        country = 'AUSTRALIA'
+elif (dataframeselect == datasetlijst[3]) & (dataframeselect != ""):
+        display_data = df_afr.copy()
+        country = 'SOUTH AFRICA'
+elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
+        display_data = df_nzl.copy()
+        country = 'NEW ZEALAND'
+elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
+        display_data = df_png.copy()
+        country = 'PAPUA NEW GUINEA'
+elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
+        display_data = df_bra.copy()
+        country = 'BRAZIL'
+elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
+        display_data = df_bah.copy()
+        country = 'BAHAMAS' 
+
+display_box0 = display_data[['Year','Attack','Fatal (Y/N)']] 
+display_box = display_box0.groupby(['Year','Fatal (Y/N)'])['Attack'].sum()
+display_box = display_box.to_frame()
+display_box= display_box.reset_index()
+display_box.head()
+
+
+
+################################################################################################################################################
 
 tab1, tab2, tab3 = st.tabs(["Kaart", "Dog", "Owl"])
 
@@ -139,16 +167,6 @@ with tab1:
 with tab2:
    st.header("Histogrammen")
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
    newnames = {'Y':'Dodelijk', 'N': 'Niet dodelijk'}
    fig1 = px.histogram(df, x = df['Activity_cat'], color = df['Fatal (Y/N)'],
                      labels={
@@ -163,24 +181,10 @@ with tab2:
    st.plotly_chart(fig1)
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
   
 with tab3:
-   st.header("A cdasfasdfat")
+  st.header("A cdasfasdfat")
+  dataframeselect = st.selectbox('Welke set wil je zien', datasetlijst, key='dataframe select')
 
 
 
