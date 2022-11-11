@@ -164,7 +164,7 @@ with tab3:
           display_data = df.copy()
           country = 'All'
   elif (dataframeselect == datasetlijst[1]) & (dataframeselect != ""):
-          display_data = df_USA.copy()
+          display_data = df_usa.copy()
           country = 'USA'
   elif (dataframeselect == datasetlijst[2]) & (dataframeselect != ""):
           display_data = df_aus.copy()
