@@ -227,7 +227,7 @@ with tab3:
   
   ###############################################################################################################################################
   
-  fi4 = px.scatter(display_box,x= 'Year', y='Attack', color='Fatal (Y/N)', trendline='ols',
+  fig4 = px.scatter(display_box,x= 'Year', y='Attack', color='Fatal (Y/N)', trendline='ols',
                    labels={
                        "Year": "Jaar",
                        "Attack": "Aantal aanvallen"
