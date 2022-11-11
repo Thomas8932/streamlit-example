@@ -164,7 +164,7 @@ with tab3:
           display_data = df.copy()
           country = 'All'
   elif (dataframeselect == datasetlijst[1]) & (dataframeselect != ""):
-          display_data = df_usa.copy()
+          display_data = df_USA.copy()
           country = 'USA'
   elif (dataframeselect == datasetlijst[2]) & (dataframeselect != ""):
           display_data = df_aus.copy()
@@ -197,9 +197,10 @@ with tab3:
   fig2.update_layout(legend_title="Uitkomst aanval")
   fig2.for_each_trace(lambda t: t.update(name = newnames[t.name],
                                         legendgroup = newnames[t.name],
-                                        hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
-                                       )
-                    )
+                                        hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
+  
+  ###############################################################################################################################################
+  
   fig2.show()
   
   
