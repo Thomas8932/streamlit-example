@@ -121,8 +121,12 @@ BAHAMAS = df[df['Country'] == 'BAHAMAS']
 
 ################################################################################################################################################
 
-tab1, tab2, tab3 = st.tabs(["Kaart", "Activiteit", "Per land"])
+tab4, tab1, tab2, tab3 = st.tabs(['Start',"Kaart", "Activiteit", "Per land"])
 ################################################################################################################################################
+
+with tab4:
+  st.header('asdf')
+
 
 with tab1:
   st.header("Choropleth")  
@@ -215,7 +219,7 @@ with tab3:
   
   fig3 = px.line(display_line, x="Year", y="Attack", 
                   labels={
-                       "Year": "jaar",
+                       "Year": "Jaar",
                        "Attack": "Aantal aanvallen"
                   },
                   title='Aantal aanvallen per jaar')
