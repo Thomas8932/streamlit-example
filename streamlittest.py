@@ -12,7 +12,6 @@ import geopandas as gpd
 import numpy as np
 import streamlit as st
 from streamlit_folium import st_folium
-import statsmodels
 import matplotlib.pyplot as plt
 
 
