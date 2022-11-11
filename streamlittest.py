@@ -117,7 +117,82 @@ BAHAMAS = df[df['Country'] == 'BAHAMAS']
 
 ###############
 
-
+code = '''
+x = 0
+coordsLAT = []
+coordsLONG = []
+methode = []
+for a,b in aanvalplek.iterrows():
+    time.sleep(1.01)
+    x = x + 1
+    print(x)
+    try:        
+        if not pd.isna(b['Location']):
+            geolocator = Nominatim(user_agent="hoenaam@xs4all.nl")
+            location = geolocator.geocode(b['Location'])
+            coordsLAT.append(location.latitude)
+            coordsLONG.append(location.longitude)
+            print([location.latitude, location.longitude])
+            methode.append('locatie')
+        elif not pd.isna(b['Area']):
+            geolocator = Nominatim(user_agent="hoenaam@xs4all.nl")
+            location = geolocator.geocode(b['Area'])
+            coordsLAT.append(location.latitude)
+            coordsLONG.append(location.longitude)
+            print([location.latitude, location.longitude])
+            methode.append('area')
+        else:
+            if pd.isna(b['Country']):
+                coordsLAT.append('geen locatie bekend')
+                coordsLONG.append('geen locatie bekend')
+                methode.append('error')
+            else:
+                coordsLAT.append('alleen land bekend')
+                coordsLONG.append('alleen land bekend')
+                methode.append('error')
+    except:
+        try:   
+            if not (pd.isna(b['Location']) and pd.isna(b['Area'])):
+                time.sleep(1.01)
+                geolocator = Nominatim(user_agent="hoenaam@xs4all.nl")
+                AreaLoc = b['Area'] + ',' + b['Location']
+                location = geolocator.geocode(AreaLoc)
+                coordsLAT.append(location.latitude)
+                coordsLONG.append(location.longitude)
+                print([location.latitude, location.longitude])
+                methode.append('arealoc')
+            else:
+                raise ValueError('1 van de 2 is nan')
+        except:
+            try:
+                if not (pd.isna(b['Location']) and pd.isna(b['Country'])):
+                    time.sleep(1.01)
+                    geolocator = Nominatim(user_agent="hoenaam@xs4all.nl")
+                    countryloc = b['Country'] + ',' + b['Location']
+                    location = geolocator.geocode(countryloc)
+                    coordsLAT.append(location.latitude)
+                    coordsLONG.append(location.longitude)
+                    print([location.latitude, location.longitude])
+                    methode.append('countryloc')
+                else:
+                    raise ValueError('1 van de 2 is nan')
+            except:
+                try:
+                    if not (pd.isna(b['Country']) and pd.isna(b['Area'])):
+                        time.sleep(1.01)
+                        geolocator = Nominatim(user_agent="hoenaam@xs4all.nl")
+                        countryarea = b['Country'] + ',' + b['Area']
+                        location = geolocator.geocode(countryarea)
+                        coordsLAT.append(location.latitude)
+                        coordsLONG.append(location.longitude)
+                        print([location.latitude, location.longitude])
+                        methode.append('countryarea')
+                    else:
+                        raise ValueError('1 van de 2 is nan')
+                except:
+                    coordsLAT.append('error')
+                    coordsLONG.append('error')
+                    methode.append('error')'''
 
 
  
@@ -244,7 +319,7 @@ with tab3:
   
 with tab4:
   st.header('Coordinaten vinden')
-  
+   st.code(code, language="python")
   
   
   
