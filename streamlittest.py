@@ -113,44 +113,16 @@ BAHAMAS = df[df['Country'] == 'BAHAMAS']
 
 ###############
 
-datasetlijst = ["Alle_Landen", "USA", "AUSTRALIA", "SOUTH_AFRICA", "NEW_ZEALAND", "PAPUA_NEW_GUINEA","BRAZIL","BAHAMAS"]
 
-if (dataframeselect == datasetlijst[0]) & (dataframeselect != ""):
-        display_data = df.copy()
-        country = 'All'
-elif (dataframeselect == datasetlijst[1]) & (dataframeselect != ""):
-        display_data = df_usa.copy()
-        country = 'USA'
-elif (dataframeselect == datasetlijst[2]) & (dataframeselect != ""):
-        display_data = df_aus.copy()
-        country = 'AUSTRALIA'
-elif (dataframeselect == datasetlijst[3]) & (dataframeselect != ""):
-        display_data = df_afr.copy()
-        country = 'SOUTH AFRICA'
-elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
-        display_data = df_nzl.copy()
-        country = 'NEW ZEALAND'
-elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
-        display_data = df_png.copy()
-        country = 'PAPUA NEW GUINEA'
-elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
-        display_data = df_bra.copy()
-        country = 'BRAZIL'
-elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
-        display_data = df_bah.copy()
-        country = 'BAHAMAS' 
 
-display_box0 = display_data[['Year','Attack','Fatal (Y/N)']] 
-display_box = display_box0.groupby(['Year','Fatal (Y/N)'])['Attack'].sum()
-display_box = display_box.to_frame()
-display_box= display_box.reset_index()
-display_box.head()
+
 
 
 
 ################################################################################################################################################
 
 tab1, tab2, tab3 = st.tabs(["Kaart", "Dog", "Owl"])
+################################################################################################################################################
 
 with tab1:
   st.header("Choropleth")  
@@ -161,7 +133,7 @@ with tab1:
   
   st_data = st_folium(timelapsemap,width=520,height=400)
 
-    
+################################################################################################################################################
     
     
 with tab2:
@@ -180,11 +152,44 @@ with tab2:
                                         hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
    st.plotly_chart(fig1)
     
-    
+################################################################################################################################################
+  
   
 with tab3:
   st.header("A cdasfasdfat")
+  datasetlijst = ["Alle_Landen", "USA", "AUSTRALIA", "SOUTH_AFRICA", "NEW_ZEALAND", "PAPUA_NEW_GUINEA","BRAZIL","BAHAMAS"]
   dataframeselect = st.selectbox('Welke set wil je zien', datasetlijst, key='dataframe select')
+  
+  if (dataframeselect == datasetlijst[0]) & (dataframeselect != ""):
+          display_data = df.copy()
+          country = 'All'
+  elif (dataframeselect == datasetlijst[1]) & (dataframeselect != ""):
+          display_data = df_usa.copy()
+          country = 'USA'
+  elif (dataframeselect == datasetlijst[2]) & (dataframeselect != ""):
+          display_data = df_aus.copy()
+          country = 'AUSTRALIA'
+  elif (dataframeselect == datasetlijst[3]) & (dataframeselect != ""):
+          display_data = df_afr.copy()
+          country = 'SOUTH AFRICA'
+  elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
+          display_data = df_nzl.copy()
+          country = 'NEW ZEALAND'
+  elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
+          display_data = df_png.copy()
+          country = 'PAPUA NEW GUINEA'
+  elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
+          display_data = df_bra.copy()
+          country = 'BRAZIL'
+  elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
+          display_data = df_bah.copy()
+          country = 'BAHAMAS' 
+
+  display_box0 = display_data[['Year','Attack','Fatal (Y/N)']] 
+  display_box = display_box0.groupby(['Year','Fatal (Y/N)'])['Attack'].sum()
+  display_box = display_box.to_frame()
+  display_box= display_box.reset_index()
+  display_box.head()
 
 
 
