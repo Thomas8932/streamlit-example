@@ -389,7 +389,7 @@ with tab4:
   st.header('Coordinaten vinden')
   st.code(code1, language="python")
   st.header('Gender')
-  st.code(code3, language="python")
+  st.code(code4, language="python")
   
   
   
