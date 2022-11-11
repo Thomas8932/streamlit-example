@@ -121,11 +121,10 @@ BAHAMAS = df[df['Country'] == 'BAHAMAS']
 
 ################################################################################################################################################
 
-tab4, tab1, tab2, tab3 = st.tabs(['Start',"Kaart", "Activiteit", "Per land"])
+tab1, tab2, tab3,tab4 = st.tabs(["Kaart", "Activiteit", "Per land",'Start'])
 ################################################################################################################################################
 
-with tab4:
-  st.header('asdf')
+
 
 
 with tab1:
@@ -226,13 +225,28 @@ with tab3:
   fig3.update_xaxes(rangeslider_visible=True)
   st.plotly_chart(fig3)
   
+  ###############################################################################################################################################
+  
+  fi4 = px.scatter(display_box,x= 'Year', y='Attack', color='Fatal (Y/N)', trendline='ols',
+                   labels={
+                       "Year": "Jaar",
+                       "Attack": "Aantal aanvallen"
+                  },
+                  title='Aantal aanvallen per jaar')
+  fig4.update_layout(legend_title="Uitkomst aanval")
+  fig4.for_each_trace(lambda t: t.update(name = newnames[t.name],
+                                        legendgroup = newnames[t.name],
+                                        hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
+                                       )
+                    )
+  fig4.update_xaxes(rangeslider_visible=True)
+  fig4.show()
   
   
+###############################################################################################################################################
   
-  
-  
-  
-  
+with tab4:
+  st.header('asdf')
   
   
   
