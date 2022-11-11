@@ -170,14 +170,14 @@ with tab3:
           display_data = AUSTRALIA.copy()
           country = 'AUSTRALIA'
   elif (dataframeselect == datasetlijst[3]) & (dataframeselect != ""):
-          display_data = SOUTH AFRICA.copy()
-          country = 'SOUTH AFRICA'
+          display_data = SOUTH_AFRICA.copy()
+          country = 'SOUTH_AFRICA'
   elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
-          display_data = NEW ZEALAND.copy()
-          country = 'NEW ZEALAND'
+          display_data = NEW_ZEALAND.copy()
+          country = 'NEW_ZEALAND'
   elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
-          display_data = PAPUA NEW GUINEA.copy()
-          country = 'PAPUA NEW GUINEA'
+          display_data = PAPUA_NEW_GUINEA.copy()
+          country = 'PAPUA_NEW_GUINEA'
   elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
           display_data = BRAZIL.copy()
           country = 'BRAZIL'
