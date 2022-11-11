@@ -167,22 +167,22 @@ with tab3:
           display_data = USA.copy()
           country = 'USA'
   elif (dataframeselect == datasetlijst[2]) & (dataframeselect != ""):
-          display_data = df_aus.copy()
+          display_data = AUSTRALIA.copy()
           country = 'AUSTRALIA'
   elif (dataframeselect == datasetlijst[3]) & (dataframeselect != ""):
-          display_data = df_afr.copy()
+          display_data = SOUTH AFRICA.copy()
           country = 'SOUTH AFRICA'
   elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
-          display_data = df_nzl.copy()
+          display_data = NEW ZEALAND.copy()
           country = 'NEW ZEALAND'
   elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
-          display_data = df_png.copy()
+          display_data = PAPUA NEW GUINEA.copy()
           country = 'PAPUA NEW GUINEA'
   elif (dataframeselect == datasetlijst[4]) & (dataframeselect != ""):
-          display_data = df_bra.copy()
+          display_data = BRAZIL.copy()
           country = 'BRAZIL'
   elif (dataframeselect == datasetlijst[5]) & (dataframeselect != ""):
-          display_data = df_bah.copy()
+          display_data = BAHAMAS.copy()
           country = 'BAHAMAS' 
 
   display_box0 = display_data[['Year','Attack','Fatal (Y/N)']] 
