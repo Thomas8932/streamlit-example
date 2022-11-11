@@ -269,11 +269,11 @@ tab1, tab2, tab3,tab4 = st.tabs(["Kaart", "Activiteit", "Per land",'Code'])
 
 
 with tab1:
-  st.header("Choropleth")  
+  st.header("Aanvallen per land")  
 
   st_date = st_folium(mapcp,width=520,height=400)
   
-  st.header("Tijdlijn kaart")  
+  st.header("Aanvallen door de tijd")  
   
   st_data = st_folium(timelapsemap,width=520,height=400)
 
