@@ -121,7 +121,7 @@ BAHAMAS = df[df['Country'] == 'BAHAMAS']
 
 ################################################################################################################################################
 
-tab1, tab2, tab3 = st.tabs(["Kaart", "Dog", "Owl"])
+tab1, tab2, tab3 = st.tabs(["Kaart", "Activiteit", "Per land"])
 ################################################################################################################################################
 
 with tab1:
@@ -137,7 +137,7 @@ with tab1:
     
     
 with tab2:
-   st.header("Histogrammen")
+   st.header("Activiteiten")
     
    newnames = {'Y':'Dodelijk', 'N': 'Niet dodelijk'}
    fig1 = px.histogram(df, x = df['Activity_cat'], color = df['Fatal (Y/N)'],
@@ -156,7 +156,7 @@ with tab2:
   
   
 with tab3:
-  st.header("A cdasfasdfat")
+  st.header("Per land")
   datasetlijst = ["Alle_Landen", "USA", "AUSTRALIA", "SOUTH_AFRICA", "NEW_ZEALAND", "PAPUA_NEW_GUINEA","BRAZIL","BAHAMAS"]
   dataframeselect = st.selectbox('Welke set wil je zien', datasetlijst, key='dataframe select')
   
