@@ -274,7 +274,7 @@ with tab1:
 
   st_date = st_folium(mapcp,width=520,height=400)
   
-  st.header("Aanvallen door de tijd")  
+  st.header("Aanvallen per jaar")  
   
   st_data = st_folium(timelapsemap,width=520,height=400)
 
