@@ -191,16 +191,7 @@ with tab3:
   display_box= display_box.reset_index()
   display_box.head()
 
-  
-  fig2 = px.box(display_box, color= 'Fatal (Y/N)', y = 'Attack', title="Verhouding dodelijke en niet dodelijke aanvallen")
-  fig2.update_layout( yaxis_title="Aantal aanvallen")
-  fig2.update_layout(legend_title="Uitkomst aanval")
-  fig2.for_each_trace(lambda t: t.update(name = newnames[t.name],
-                                        legendgroup = newnames[t.name],
-                                        hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
-                                       )
-                    )
-  fig2.show()
+ 
   
   
   
