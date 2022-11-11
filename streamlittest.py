@@ -86,6 +86,7 @@ TimestampedGeoJson(
     {'type': 'FeatureCollection',
     'features': features}
     , period='P1Y'
+    , duration='P1Y'
     , add_last_point=True
     , auto_play=False
     , loop=False
