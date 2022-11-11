@@ -239,7 +239,25 @@ for i in range(0,len(df['geslacht'])):
         df['geslacht'][i] = df['geslacht'][i]
 '''
 
- 
+code4 = '''
+df['Activity_cat'] = df['Activity']
+df['Activity_cat'] = df['Activity_cat'].astype(str)
+df['Activity_cat'] = df['Activity_cat'].str.lower()
+for i in range(0, len(df['Activity_cat'])):
+    if "boarding" in df['Activity_cat'][i].lower() or 'surf' in df['Activity_cat'][i].lower():
+        df['Activity_cat'][i] = 'surfing'
+    elif "diving" in df['Activity_cat'][i].lower() or 'swim' in df['Activity_cat'][i].lower() or 'snorkeling' in df['Activity_cat'][i].lower() or 'floating' in df['Activity_cat'][i].lower() or 'bathing' in df['Activity_cat'][i].lower():
+        df['Activity_cat'][i] = 'swimming'
+    elif "sailing" in df['Activity_cat'][i].lower() or 'kayaking' in df['Activity_cat'][i].lower() or 'overboard' in df['Activity_cat'][i].lower() or 'sea disaster' in df['Activity_cat'][i].lower() or 'rowing' in df['Activity_cat'][i].lower() or "canoeing" in df['Activity_cat'][i].lower() or 'paddleskiing' in df['Activity_cat'][i].lower() or 'ship' in df['Activity_cat'][i].lower() or 'boat' in df['Activity_cat'][i].lower():
+        df['Activity_cat'][i] = 'sailing'
+    elif "standing" in df['Activity_cat'][i].lower() or 'wading' in df['Activity_cat'][i].lower() or 'walking' in df['Activity_cat'][i].lower():
+        df['Activity_cat'][i] = 'standing'
+    elif "fish" in df['Activity_cat'][i].lower():
+        df['Activity_cat'][i] = 'fishing'    
+    else:
+        df['Activity_cat'][i] = 'anders'
+'''
+  
 
 
 ################################################################################################################################################
